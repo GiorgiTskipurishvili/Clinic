@@ -1,0 +1,247 @@
+.card-edit-container{
+    width: 750px;
+    height: 426px;
+}
+
+
+.card{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #0533540D;
+    width: 750px;
+    height: 315px;
+    border-radius: 10px;
+}
+
+.person-profile{
+    margin-top: 45px;
+    margin-bottom: 37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.person-profile h1{
+    font-size: 18px;
+    font-weight: 400;
+    color: #18A4E1;
+}
+
+.person-profile p,.person-profile span {
+    font-size: 14px;
+}
+
+
+.person-profile img{
+    width: 177px;
+    height: 177px;
+    border-radius: 50%;
+}
+
+.star img {
+    height: 24px;
+    width: 24px;
+    margin: auto;
+}
+
+.person-info img{
+    height: 28px;
+    width: 28px;
+}
+
+
+
+p{
+    color: #053354;
+    font-size: 18px;
+}
+
+span{
+    color: #0533544D;
+    font-size: 18px;
+}
+
+
+h1{
+    font-size: 18px;
+    color: #053354;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    margin-top: 20px; 
+    gap: 45px;
+}
+.id-num, .booking-nums{
+    display: flex;
+    flex-direction: column;
+
+}
+.id-num input{
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #0533540D;
+}
+
+.email input{
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #0533540D;
+}
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 58px;
+}
+
+.addButton{
+    background-color: #3ACF99;
+    width: 170px;
+    height: 50px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.editButton{
+    width: 230px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ECF2F8;
+    cursor: pointer;
+    color: #18A4E1;
+    border: none;
+    margin-right: 30px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.editButton img{
+    margin-right: 10px;
+}
+
+.deleteButton{
+    width: 170px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF93A6;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.deleteButton img{
+    margin-right: 12px;
+}
+
+
+.editButton-container{
+    display: flex;
+}
+.saveButton{
+    width: 170px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ECF2F8;
+    cursor: pointer;
+    color: #18A4E1;
+    border: none;
+    margin-right: 30px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.cancelButton{
+    width: 170px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ECF2F8;
+    cursor: pointer;
+    color: #18A4E1;
+    border: none;
+    margin-right: 30px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.saveButton:hover{
+    background-color: #3ACF99;
+    color: #FFFFFF;
+}
+
+.cancelButton:hover{
+    background-color: #FF93A6;
+    color: #FFFFFF;
+}
+
+
+.upload-file__container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+.upload-file__container label{
+    font-size: 18px;
+    color: #053354;
+}
+
+.upload-photo{
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-photo input{
+    background-color: #FFFFFF;
+    height: 30px;
+    width: 175px;
+    padding: 5px;
+    border: 1px solid #0533540D;
+    border-radius: 5px;
+    
+}
+.upload-cv{
+    display: flex;
+    flex-direction: column;
+}
+.upload-cv input{
+    background-color: #FFFFFF;
+    height: 30px;
+    width: 175px;
+    padding: 5px;
+    border: 1px solid #0533540D;
+    border-radius: 5px;
+}

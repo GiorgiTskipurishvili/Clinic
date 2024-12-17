@@ -1,0 +1,114 @@
+  <div class="registration-container">
+    <h1>რეგისტრაცია</h1>
+
+    <form class="registration-form" [formGroup]="registrationForm" (ngSubmit)="submit()">
+      <div class="first">
+        <div class="registration-container__input">
+          <label for="firstName" >სახელი</label>
+          <input id="firstName" formControlName="firstName" type="text" />
+        </div>
+
+        <div class="registration-container__input">
+          <label for="email" >Email</label>
+          <input id="email" formControlName="email" type="email" />
+        </div>
+
+        <div class="registration-container__input">
+          <label for="personalId" >პირადი ნომერი</label>
+          <input id="personalId" formControlName="personalId" type="text" />
+        </div>
+      </div>
+
+      <div class="second">
+        <div class="registration-container__input">
+          <label for="lastName" >გვარი</label>
+          <input id="lastName" formControlName="lastName" type="text" />
+        </div>
+
+        <div class="registration-container__input">
+          <label for="password" >პაროლი</label>
+          <input id="password" formControlName="password" type="password" />
+        </div>
+
+        <div class="registration-container__input">
+          <label for="category" >კატეგორია</label>
+          <input id="category" formControlName="category" type="text" />
+        </div>
+      </div>
+
+      <div class="third">
+
+
+        <!-- <div class="registration-container__input">
+          <label for="photo">ფოტოსურათი</label>
+          <div class="input-with-image">
+            <input type="text" id="photo" formControlName="photo" readonly />
+            <img src="assets/img.svg" alt="Upload Photo" (click)="fileInputPhoto.click()" />
+            <input type="file" #fileInputPhoto (change)="onFileChange($event, 'photo')" hidden />
+          </div>
+        </div>
+        
+        <div class="registration-container__input">
+          <label for="cv">CV</label>
+          <div class="input-with-image">
+            <input type="text" id="cv" formControlName="cv" readonly />
+            <img src="assets/cv.svg" alt="Upload CV" (click)="fileInputCv.click()" />
+            <input type="file" #fileInputCv (change)="onFileChange($event, 'cv')" hidden />
+          </div>
+        </div> -->
+        
+        <div class="registration-container__input">
+          <label for="photo">ფოტოსურათი</label>
+          <div class="input-with-image">
+            <input
+              type="text"
+              id="photo"
+              [value]="registrationForm.get('photo')?.value?.name || ''"
+              readonly
+            />
+            <img
+              src="assets/img.svg"
+              alt="Upload Photo"
+              (click)="fileInputPhoto.click()"
+            />
+            <input
+              type="file"
+              #fileInputPhoto
+              (change)="onFileChange($event, 'photo')"
+              hidden
+            />
+          </div>
+        </div>
+        
+        <div class="registration-container__input">
+          <label for="cv">CV</label>
+          <div class="input-with-image">
+            <input
+              type="text"
+              id="cv"
+              [value]="registrationForm.get('cv')?.value?.name || ''"
+              readonly
+            />
+            <img
+              src="assets/cv.svg"
+              alt="Upload CV"
+              (click)="fileInputCv.click()"
+            />
+            <input
+              type="file"
+              #fileInputCv
+              (change)="onFileChange($event, 'cv')"
+              hidden
+            />
+          </div>
+        </div>
+        
+
+
+        <button type="submit" [disabled]="registrationForm.invalid">რეგისტრაცია</button>
+      </div>
+    </form>
+
+    <div *ngIf="message" class="message">{{ message }}</div>
+
+  </div> 

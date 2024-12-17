@@ -1,0 +1,90 @@
+
+
+
+.profile{
+    /* width: 100%;
+    height: 250px; */ 
+    width: 100%;
+    height:  250px;
+    border: 1px solid #ECF2F8;
+    border-radius: 10px;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+/* left-right */
+.left-side{
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 48px;
+    width: 87%; 
+    gap: 20px;
+}
+
+.right-side{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 48px;
+}
+
+.img-container img{
+    width: 157px;
+    height: 157px;
+    border-radius: 50%;
+
+    object-fit: cover; 
+}
+
+/* about */
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+
+}
+.about h1{
+    font-size: 22px;
+    font-weight: 400;
+    color: #053354;
+}
+.about p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #0533544D;
+}
+
+/*  */
+.stars{
+    display: flex;
+    gap:3px 
+}
+.stars img {
+    width: 20px;
+    height: 20px;
+}
+
+.booking-calendar{
+    width: 1111px;
+    height: 700px;
+    border: 1px solid black ;
+
+}
+
+.cv-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+    padding-right: 48px;
+}

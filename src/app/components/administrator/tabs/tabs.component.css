@@ -1,0 +1,24 @@
+.tabs-container{
+    width: 1090px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+button{
+    height: 50px;
+    width: 350px;
+    border-radius: 50px;
+    background-color: #FFFFFF;
+    color: #18A4E1;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #18A4E14D;
+}
+
+button:hover{
+    background-color: #ECF2F8;
+}

@@ -1,0 +1,28 @@
+.administrator-container{
+    /* color: #fbfbfc; */
+    padding-left: 150px  ;
+    padding-right: 150px;
+}
+
+.administrator-container__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.administrator-container__body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 63px;
+    padding-bottom: 169px;
+    justify-content: space-between;
+}
+
+/* .calendar__container{
+    width: 830px;
+    height: 655px;
+    border: 1px solid black;
+} */
+

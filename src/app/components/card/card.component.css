@@ -1,0 +1,141 @@
+
+/* .card-container{
+    width: 100%;
+    height: auto;
+    top: 903px;
+    left: 560px;
+    gap: 0px;
+    border-radius: 10px;
+    opacity: 0px;
+    border: 1px solid #18A4E14D;
+    display: flex;
+    flex-direction: column;
+
+} */
+
+.card-container__inner{
+    display: flex;
+    flex-direction: column;
+}
+.first, .second {
+    display: flex; 
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.person-card{
+    width: 390px;
+    height: 390px;
+    border: 1px solid #18A4E14D;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 10px 20px 0px 10px
+}
+.person-card:last-child {
+    margin-right: 0; /* Remove right margin for the last card in each row */
+}
+
+
+.viewer-container{
+    background-color: #ECF2F880;
+    width: 107px;
+    height: 30px;
+    border-radius: 50px;
+    opacity: 1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewer-container img{
+    margin: auto;
+}
+
+.viewer{
+    font-size: 14px;
+    margin-right: 15px;
+}
+.profile{
+    display: flex;
+    justify-content: center;
+}
+.profile img{
+    width: 157px;
+    height: 157px;
+    border-radius: 50%;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 15px;
+}
+.about h1{
+    font-family: FiraGO;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+
+    color: #053354;
+
+}
+
+.about p{
+    font-family: FiraGO;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+
+    color: #0533544D;
+
+}
+
+.stars{
+    display: flex;
+    justify-content: center;
+}
+.stars span {
+    margin: 6px -2px; 
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+.button-container button{
+    color: #18A4E1;
+    border: 1px solid #18A4E1;
+    background-color: #FFFFFF;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+
+    opacity: 0px;
+
+    margin-top: 22px;
+    cursor: pointer;
+}
+
+
+.button-container button:hover{
+    background-color: #18a5e131;
+}
+
+.p_end{
+    font-size: 14px;
+    font-weight: 400;
+
+    margin-right: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.pin{
+    cursor: pointer;
+}

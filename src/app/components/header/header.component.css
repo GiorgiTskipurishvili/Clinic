@@ -1,0 +1,158 @@
+.header-container {
+    gap: 0px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.company-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.company-logo span {
+    color: #FF2C52;
+    font-family: FiraGO;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26.4px;
+    letter-spacing: 0.07em;
+    margin-left: 10px; 
+}
+
+.company-logo img {
+    width: 90px;
+    /* height: 66px;  */
+    height: auto;
+}
+
+.lists ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    /* cursor: pointer; */
+}
+
+.lists li {
+    font-family: FiraGO;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 15px; 
+    cursor: pointer;
+}
+
+.l-container{
+    width: 280px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: #F0FAFF;
+
+    align-items: center;
+    display: grid;
+    padding-inline: 5px;
+}
+
+.auth-reg {
+    background-color: #F0FAFF;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+div .auth-reg{
+    width: 280px;
+    height: 45px;
+    top: 31px;
+    left: 1382px;
+    gap: 0px;
+    border-radius: 25px;
+    opacity: 0px;
+
+}
+
+.auth-reg span {
+    font-family: FiraGO;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.auth {
+    color: #18A4E1;
+}
+
+.reg {
+    color: #053354;
+}
+
+
+
+.onSite{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.personOnSite{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.circle{
+    width: 36px;
+    height: 36px;
+    background-color: #053354;
+     border-radius: 50%;
+}
+.personInfoOnSite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.personInfoOnSite h2{
+    font-size: 16px;
+    font-weight: 400;
+}
+.personInfoOnSite p{
+    font-size: 11px;
+}
+
+.check img{
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+}
+.change-language {
+    margin-left: 20px;
+}
+
+.drop-down {
+    font-family: FiraGO;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #F0FAFF; 
+    width: 80px;
+    height: 45px;
+
+}
+
+option {
+    font-family: FiraGO;
+    font-size: 16px;
+    color: #053354;
+}
+a{
+    cursor: pointer;
+}
+

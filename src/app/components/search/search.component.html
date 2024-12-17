@@ -1,0 +1,74 @@
+<div class="search-container">
+  
+  <div class="info">
+    <div class="phone">
+      <div class="circle-logo">
+        <img src="assets/call.svg" alt="Phone">
+      </div>
+      <p>032 2 100 100</p>
+    </div>
+    <div class="address">
+      <div class="circle-logo">
+        <img src="assets/location.svg" alt="Location">
+      </div>
+      <p>იაკობ ნიკოლაძე №10</p>
+    </div>
+  </div>
+
+  <div class="search__container">
+    <div class="search__doctor-name">
+      <input
+        type="text"
+        placeholder="მოძებნე ექიმი სახელით"
+        [(ngModel)]="nameSearch"
+        (input)="filterDoctors()"
+      />
+    </div>
+
+    <div class="search__doctor-specialty">
+      <input
+        type="text"
+        placeholder="მოძებნე სპეციალობით"
+        [(ngModel)]="categorySearch"
+        (input)="filterDoctors()"
+      />
+    </div>
+  </div>
+
+  <div *ngIf="isListVisible && filteredDoctors.length > 0" class="doctor-list-container">
+    <div
+      class="doctor-card"
+      *ngFor="let doctor of filteredDoctors"
+      [routerLink]="['/booking', doctor.id]"
+    >
+      <div class="profile">
+        <img
+          *ngIf="doctor.photo"
+          [src]="'data:image/jpeg;base64,' + doctor.photo"
+          alt="Doctor's photo"
+        />
+      </div>
+      <div class="about">
+        <p>{{ doctor.firstName }} {{ doctor.lastName }}</p>
+        <p>სპეციალობა: {{ doctor.category }}</p>
+        <p>რეიტინგი: {{ doctor.rating }}</p>
+        <div class="stars">
+          <img
+            *ngFor="let star of generateStars(doctor.rating)"
+            src="assets/star.svg"
+            alt="star"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="search-button">
+    <button>
+        <img src="assets/search.png" alt="">
+    </button>
+</div>
+
+</div>
+

@@ -1,0 +1,36 @@
+<p>user-page works!</p>
+<div class="user-page__container">
+    <div class="category-container">
+        <app-category></app-category>
+    </div>
+
+    <div class="user-profile">
+        <div class="user-photo">
+            <img src="assets/userProfile.svg" alt="giorgikhorava">
+            <h1>მომხმარებელი</h1>
+        </div>
+    
+    <div class="id-num">
+        <p>პირადი ნომერი</p>
+        <span>{{userData?.personalId}}</span> 
+    </div>
+
+    <div class="email">
+        <p>Email</p>
+        <span>{{userData?.email}}</span>
+
+    </div>
+
+    <div class="my-booking">
+        <p>ჩემი ჯავშანი</p>
+        <span>{{bookings.length}}</span>
+    </div>
+
+
+    </div>
+
+    <div class="user-booking">
+        <app-user-calendar></app-user-calendar>
+    </div>
+
+</div>

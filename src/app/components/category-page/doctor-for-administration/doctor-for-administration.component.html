@@ -1,0 +1,31 @@
+<p>asdasdasdasd</p>
+<div class="categories-container">
+    <h1>კატეგორიები</h1>
+    <table>
+        <thead>
+            <tr class="category-list">
+                <th>სახელი</th>
+                <th>კატეგორია</th>
+                <th>ფოტო</th>
+                <th>რეიტინგი</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="person-cart" *ngFor="let doctor of doctors">
+                <td>{{ doctor.firstName }} {{ doctor.lastName }}</td>
+                <td>{{ doctor.category }}</td>
+                <td> <img *ngIf="doctor.photo" [src]="'data:image/jpeg;base64,' + doctor.photo" alt="Doctor's photo" /></td>
+                <td>
+                    <span *ngFor="let star of generateStars(doctor.rating)">
+                        <img src="assets/star.svg" alt="star">
+                    </span>
+                </td>
+                <td style="text-align: center;">
+                    <button class="button-edit" [routerLink]="['/administrator',doctor.id]"><img src="assets/edit.svg" alt="edit"></button>
+                    <button class="button-delete"><img src="assets/delete.svg" alt="delete"></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

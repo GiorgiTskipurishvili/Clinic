@@ -1,0 +1,27 @@
+<div class="profile">
+
+    <div class="left-side">
+        <div class="img-container">
+            <img *ngIf="doctor?.photo" [src]="'data:image/jpeg;base64,' + doctor?.photo" alt="Doctor's photo" />   
+        </div>
+
+        <div class="about">
+            <h1>{{ doctor?.firstName }} {{ doctor?.lastName }}</h1>
+            <p>{{ doctor?.category }}</p>
+            <div class="stars">
+                <img *ngFor="let star of generateStars(doctor?.rating)" src="assets/star.svg" alt="star">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="righ-side">
+        <div class="cv-container">
+            <h3>2017 - დღემდე, ჩვენი კლინიკის გენერალური დირექტორი</h3>
+            <h3>2002 - დღემდე, ჩვენი კომპიუტერული ტომოგრაფიის განყოფილების ხელმძღვანელიდღემდე, ჩვენი კომპიუტერული ტომოგრაფიის განყოფილების ხელმძღვანელიდღემდე, ჩვენი კომპიუტერული ტომოგრაფიის განყოფილების ხელმძღვანელი     </h3>
+            <h3>1995 - დღემდე, კარდიოლოგი / არითმოლოგი</h3>
+        </div>
+    </div>
+
+
+</div>

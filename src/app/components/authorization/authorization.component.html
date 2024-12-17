@@ -1,0 +1,12 @@
+<div (click)="close()" class="modal-overlay"></div>
+<div class="modal">
+    <div (click)="close()">X</div>
+    <div class="authorization-container__form">
+        <h1>ავტორიზაცია</h1>
+        <input type="text" placeholder="ელ.ფოსტა/ტელეფონის ნომერი" [(ngModel)]="loginData.email">
+        <input type="password" placeholder="პაროლი" [(ngModel)]="loginData.password">
+        <span>პაროლის აღდგენა</span>
+        <button (click)="login()">შესვლა</button>
+        <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+    </div>
+</div>

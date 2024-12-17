@@ -1,0 +1,11 @@
+.booking-container{
+    padding-top: 41px;
+}
+
+.booking-container__inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 150px;
+    gap: 62px;
+}

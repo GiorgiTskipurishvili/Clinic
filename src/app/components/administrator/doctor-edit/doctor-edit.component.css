@@ -1,0 +1,143 @@
+.doctor-edit-container{
+    width: 750px;
+    height: 426px;
+    border: 1px solid black;
+
+
+}
+.card{
+    display: flex;
+
+}
+
+.doctor-profile{
+    margin-top: 45px;
+    margin-bottom: 37px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.doctor-profile h1{
+    font-size: 18px;
+    font-weight: 400;
+    color: #18A4E1;
+}
+
+.doctor-profile p,.doctor-profile span {
+    font-size: 14px;
+}
+
+
+.doctor-profile img{
+    width: 177px;
+    height: 177px;
+    border-radius: 50%;
+}
+
+.star img {
+    height: 24px;
+    width: 24px;
+    margin: auto;
+}
+
+.person-info img{
+    height: 28px;
+    width: 28px;
+}
+
+
+
+p{
+    color: #053354;
+    font-size: 18px;
+}
+
+span{
+    color: #0533544D;
+    font-size: 18px;
+    margin-left: 31px;
+}
+h1{
+    font-size: 18px;
+    color: #053354;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    margin-top: 20px; 
+}
+.id-num, .booking-nums{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.addButton{
+    background-color: #3ACF99;
+    width: 170px;
+    height: 50px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.editButton{
+    width: 230px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ECF2F8;
+    cursor: pointer;
+    color: #18A4E1;
+    border: none;
+    margin-right: 30px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.editButton img{
+    margin-right: 10px;
+}
+
+.deleteButton{
+    width: 170px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF93A6;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.deleteButton img{
+    margin-right: 12px;
+}

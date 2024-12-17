@@ -1,0 +1,100 @@
+<div class="card-edit-container">
+    <div class="doctor-edit-container__inner">
+       
+    <div class="card" *ngIf="doctor">
+        <div class="person-profile">
+            <div class="profile">
+                <img *ngIf="doctor.photo" [src]="'data:image/jpeg;base64,' + doctor.photo" alt="Doctor's photo" />
+            </div>
+            <h1>{{doctor.firstName}} {{doctor.lastName}}</h1>
+            
+            <p>ექიმი</p>
+            <span>{{doctor.category}}</span>
+            
+
+            <div class="star">
+                <img *ngFor="let star of generateStars(doctor.rating)" src="assets/star.svg" alt="star">
+            </div>   
+        </div>
+
+        
+        <div class="person-info">
+            <div class="info-row">
+                <div class="id-num">
+               
+                    <h1> <img src="assets/edit1.svg" alt=""> პირადი ნომერი: </h1>
+                    <span *ngIf="!editMode">{{doctor.personalId}}</span>
+                    <input *ngIf="editMode" [(ngModel)]="doctor.personalId">
+                </div>
+
+
+                <div class="booking-nums">
+            
+                    <h1>  <img src="assets/edit1.svg" alt="">დაჯავშნილია: </h1>
+                    <span>(20)</span>
+                </div>
+            </div>
+
+
+            <div class="email">
+                
+                <h1><img src="assets/edit1.svg" alt="">Email</h1>
+                <span *ngIf="!editMode">{{doctor.email}}</span>
+                <input *ngIf="editMode" [(ngModel)]="doctor.email" />
+            </div>
+
+            <div class="change-password">
+                <a (click)="togglePasswordChange()" style="cursor: pointer;"><h1> <img src="assets/edit1.svg" alt="">პაროლის შეცვლა</h1></a>
+            </div>
+            <div *ngIf="passwordChangeMode" class="change-password">
+                <input type="password" placeholder="შეიყვანეთ ახალი პაროლი" [(ngModel)]="newPassword" />
+                <button (click)="saveChanges()">შეინახე</button>
+            </div>
+
+            <div class="upload-file__container" *ngIf="editMode">
+                <div class="upload-photo">
+                    <label for="photo">ფოტოს ატვირთვა</label>
+                    <input type="file" name="photo" id="photo" >                    
+                </div>
+
+                <div class="upload-cv">
+                    <label for="cv">CV-ს ატვირთვა</label>
+                    <input type="file" name="cv" id="cv" >                    
+                </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- <div class="buttons" >
+        <button class="addButton">+ დამატება</button>
+        <div class="editButton-container">
+            <button *ngIf="!editMode" (click)="toggleEditMode()" class="editButton">
+              <img src="assets/editblue.svg" alt=""> რედაქტირება
+            </button>
+            <button *ngIf="editMode" class="saveButton" (click)="saveChanges()">შეინახე</button>
+            <button *ngIf="editMode" class="cancelButton" (click)="cancelEdit()">გაუქმება</button>
+          </div>
+        <button class="deleteButton"><img src="assets/deleteV.svg" alt="">წაშლა</button>
+
+    </div> -->
+
+    <div class="buttons">
+        <button *ngIf="!editMode" class="addButton">+ დამატება</button>
+        <button *ngIf="!editMode" (click)="toggleEditMode()" class="editButton">
+          <img src="assets/editblue.svg" alt=""> რედაქტირება
+        </button>
+        <button *ngIf="!editMode" class="deleteButton">
+          <img src="assets/deleteV.svg" alt=""> წაშლა
+        </button>
+  
+        <button *ngIf="editMode" class="saveButton" (click)="saveChanges()">შეინახე</button>
+        <button *ngIf="editMode" class="cancelButton" (click)="cancelEdit()">გაუქმება</button>
+      </div>
+
+</div>
+
+

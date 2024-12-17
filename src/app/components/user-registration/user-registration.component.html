@@ -1,0 +1,70 @@
+   <div class="registration-container">
+    <h1>რეგისტრაცია</h1>
+  
+    <form [formGroup]="registrationForm" class="registration-form">
+      <div class="first">
+        <div class="registration-container__input">
+          <label for="firstName">სახელი</label>
+          <input type="text" formControlName="firstName" placeholder="(მინიმუმ 5 სიმბოლო)" />
+          <span *ngIf="registrationForm.get('firstName')?.invalid && registrationForm.get('firstName')?.touched">
+            სახელი უნდა იყოს მინიმუმ 5 სიმბოლო
+          </span>
+        </div>
+  
+        <div class="registration-container__input">
+          <label for="email">Email</label>
+          <div class="input-with-img">
+            <input type="email" formControlName="email" />
+            <img src="assets/mailSender.svg" alt="Send Activation Code" (click)="sendActivationCode()" />
+          </div>
+          <span *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+            გთხოვთ შეიყვანოთ ვალიდური Email
+          </span>
+        </div>
+  
+        <div class="registration-container__input">
+          <label for="personalId">პირადი ნომერი</label>
+          <input type="text" formControlName="personalId" placeholder="00000000000" />
+          <span *ngIf="registrationForm.get('personalId')?.invalid && registrationForm.get('personalId')?.touched">
+            პირადი ნომერი უნდა შეიცავდეს 11 რიცხვს
+          </span>
+        </div>
+      </div>
+  
+      <div class="second">
+        <div class="registration-container__input">
+          <label for="lastName">გვარი</label>
+          <input type="text" formControlName="lastName" />
+          <span *ngIf="registrationForm.get('lastName')?.invalid && registrationForm.get('lastName')?.touched">
+            გვარის ველი სავალდებულოა
+          </span>
+        </div>
+  
+        <div class="registration-container__input">
+          <div>
+            <label for="activationCode">აქტივაციის კოდი</label>
+            <span>ვადა 30 წთ</span>
+          </div>
+          <input type="text" formControlName="activationCode" placeholder="(მინიმუმ 8 სიმბოლო)" />
+          <span *ngIf="registrationForm.get('activationCode')?.invalid && registrationForm.get('activationCode')?.touched">
+            კოდი უნდა იყოს მინიმუმ 8 სიმბოლო
+          </span>
+        </div>
+  
+        <div class="registration-container__input">
+          <label for="password">პაროლი</label>
+          <input type="password" formControlName="password" placeholder="(მინიმუმ 8 სიმბოლო)" />
+          <span *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+            პაროლი უნდა იყოს მინიმუმ 8 სიმბოლო
+          </span>
+        </div>
+      </div>
+  
+      <button type="button" (click)="handleButtonClick()" [disabled]="registrationForm.invalid">
+        {{ buttonLabel }}
+      </button>
+    </form>
+  
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </div>
+  

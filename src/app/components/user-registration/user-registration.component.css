@@ -1,0 +1,90 @@
+.registration-container{
+    width: 100%;
+    height: 345px;
+    margin-top: 60px;
+    margin-bottom: 208px;
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid black;
+}
+h1{
+    color: blue;
+    padding-left: 150px;
+    margin-bottom: 55px;
+}
+
+.registration-container__input{
+    display: flex;
+    flex-direction: column; 
+    margin-right: 40px;
+}
+.registration-container__input label {
+    margin-bottom: 5px; 
+    margin-left: 20px;
+
+}
+
+.registration-container__input input{
+    width: 480px;
+    height: 50px;
+    border-radius: 50px;
+    opacity: 0px;
+    border: 1px solid #18A4E14D;
+    padding: 0 19px;
+}
+
+.registration-container button{
+    width: 180px;
+    height: 50px;
+    border-radius: 50px;
+    opacity: 0px;
+    background-color:#053354;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    margin-top: 40px;
+    margin-left: 1500px;
+}
+
+.registration-container button:hover{
+    background-color: green;
+}
+.first, .second{
+    display: flex; 
+
+    margin-bottom: 15px;
+    padding-left: 150px;
+}
+.registration-container__input label{
+    font-family: FiraGO;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+
+    color: #053354;
+
+}
+
+.registration-container__input div{
+    display: flex;
+    justify-content: space-between;
+}
+
+span{
+    color: #0533544D;
+    margin-right: 20px;
+}
+
+.input-with-img{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.input-with-img img{ 
+    position: absolute;
+    right: 23px;
+    cursor: pointer;
+}

@@ -1,0 +1,37 @@
+<div class="main-container">
+
+    <img class="main-photo" src="assets/mainphoto.png" alt="">
+
+    <div class="main-container__inner">
+        <div class="img-text">
+            <h1>აირჩიე კლინიკა რომელსაც 
+                <br>შეგიძლია ენდო</h1>
+        </div> 
+
+        <div class="img-location">
+            <img src="assets/location.svg" alt="">
+            <p>იაკობ ნიკოლაძე №10</p>
+        </div>
+
+    </div>
+    
+    <div class="main-card__container">
+        <app-category (categorySelected)="filterDoctorsByCategory($event)"></app-category>
+      
+        <div class="main-card__inner">
+          <div class="cards-list" style="display: flex; flex-wrap: wrap;">
+            <app-card *ngFor="let doctor of filteredDoctors.slice(0, visibleDoctorsCount)" [doctor]="doctor" (pinChange)="onPinChange($event)"></app-card>
+          </div>
+      
+          <div class="showAll">
+            <p class="p_end" (click)="toggleShowAll()">
+              {{ showAll ? 'დაბრუნება' : 'სრულად ნახვა' }}
+            </p>
+          </div>
+        </div>
+    </div>
+   
+
+</div>
+
+

@@ -1,0 +1,74 @@
+
+
+<div class="header-container">
+   <div class="company-logo" routerLink="">
+     <img src="assets/logo.png" alt="logo"> 
+     <span>კლინიკა</span>
+   </div>
+ 
+   <div class="lists">
+     <ul>
+       <li>ექიმები</li>
+       <li>კლინიკები</li>
+       <li>ანოტაციები</li>
+       <li>აქციები</li>
+       <li>სერვისები</li>
+       <li>მედიკამენტები</li>
+       <li>კონტაქტი</li>
+     </ul>
+   </div>
+ 
+   <div class="l-container">
+     <div class="auth-reg" *ngIf="!authService.getUserData()">
+       <span class="auth"><a (click)="toggleModal()">ავტორიზაცია</a></span>
+       /
+       <span class="reg"><a [routerLink]="['/user-registration']">რეგისტრაცია</a></span>
+     </div>
+ 
+     <div class="check" *ngIf="authService.getUserData()">
+       <div (click)="navigateToUserPage()" style="cursor: pointer;" class="onSite">
+         <div class="personOnSite">
+
+           <ng-container *ngIf="authService.getUserData()?.role === 'Admin'">
+             <div class="circle"></div>
+           </ng-container>
+           
+           <ng-container *ngIf="authService.getUserData()?.role === 'User'">
+             <div class="userProfile">
+               <img src="assets/userProfile.svg" alt="">
+             </div>
+           </ng-container>
+ 
+           <ng-container *ngIf="authService.getUserData()?.role === 'Doctor'">
+             <div class="doctorProfile">
+
+               <img *ngIf="authService.getUserData()?.photo; else defaultDoctorImage" 
+                    [src]="'data:image/jpeg;base64,' + authService.getUserData()?.photo" 
+                    alt="Doctor's photo">
+
+               <ng-template #defaultDoctorImage>
+                 <img src="assets/doctorProfile.svg" alt="Default Doctor Profile">
+               </ng-template>
+
+             </div>
+           </ng-container>
+ 
+           <div class="personInfoOnSite">
+             <h2>{{ authService.getUserData()?.firstName }} {{ authService.getUserData()?.lastName }}</h2>
+             <p>{{ authService.getUserData()?.role }}</p>
+           </div>
+         </div>
+         <img src="/assets/logout.png" alt="logout" (click)="logout()">
+       </div>
+     </div>
+   </div>
+ 
+   <app-authorization *ngIf="isModalOpen" (toggle)="toggleModal()"></app-authorization>
+ 
+   <div class="change-language">
+     <select class="drop-down">
+       <option value="Eng">ENG</option>
+       <option value="KA">ქარ</option>
+     </select>
+   </div>
+ </div>

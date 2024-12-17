@@ -1,0 +1,63 @@
+.user-page__container{
+    display: flex;
+    flex-direction: row;
+    padding-top: 44px;
+    padding-bottom: 191px;
+
+}
+
+.user-profile{
+    width: 366px;
+    height: 800px;
+    border: 1px solid #ECF2F8;
+    margin-left: 44px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    text-align: center;
+
+}
+
+.user-photo{
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.user-photo img{
+    width: 177px;
+    height: 177px;
+    border-radius: 50%;
+}
+.user-photo h1{
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+
+    margin-top: 10px;
+    color: #18A4E1;
+}
+
+.id-num{
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+.email{
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+.my-booking{
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+p{
+    color: #053354;
+}
+
+span{
+    color: #0533544D;
+}
