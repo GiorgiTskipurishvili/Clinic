@@ -23,8 +23,8 @@
                 <div class="id-num">
                
                     <h1> <img src="assets/edit1.svg" alt=""> პირადი ნომერი: </h1>
-                    <span *ngIf="!editMode">{{doctor.personalId}}</span>
-                    <input *ngIf="editMode" [(ngModel)]="doctor.personalId">
+                    <span *ngIf="!isEditMode">{{doctor.personalId}}</span>
+                    <input *ngIf="isEditMode" [(ngModel)]="doctor.personalId">
                 </div>
 
 
@@ -39,8 +39,8 @@
             <div class="email">
                 
                 <h1><img src="assets/edit1.svg" alt="">Email</h1>
-                <span *ngIf="!editMode">{{doctor.email}}</span>
-                <input *ngIf="editMode" [(ngModel)]="doctor.email" />
+                <span *ngIf="!isEditMode">{{doctor.email}}</span>
+                <input *ngIf="isEditMode" [(ngModel)]="doctor.email" />
             </div>
 
             <div class="change-password">
@@ -51,7 +51,7 @@
                 <button (click)="saveChanges()">შეინახე</button>
             </div>
 
-            <div class="upload-file__container" *ngIf="editMode">
+            <div class="upload-file__container" *ngIf="isEditMode">
                 <div class="upload-photo">
                     <label for="photo">ფოტოს ატვირთვა</label>
                     <input type="file" name="photo" id="photo" >                    
@@ -82,7 +82,7 @@
 
     </div> -->
 
-    <div class="buttons">
+    <!-- <div class="buttons">
         <button *ngIf="!editMode" class="addButton">+ დამატება</button>
         <button *ngIf="!editMode" (click)="toggleEditMode()" class="editButton">
           <img src="assets/editblue.svg" alt=""> რედაქტირება
@@ -93,7 +93,40 @@
   
         <button *ngIf="editMode" class="saveButton" (click)="saveChanges()">შეინახე</button>
         <button *ngIf="editMode" class="cancelButton" (click)="cancelEdit()">გაუქმება</button>
+    </div> -->
+
+
+
+    <!--  -->
+      <div class="buttons">
+
+            <div class="add-button" *ngIf="!isEditMode && !isDeleteMode">
+                <button>+ დამატება</button>
+            </div>
+
+            <div class="edit-button" *ngIf="!isEditMode && !isDeleteMode" (click)="toggleEditMode()">
+                <button><img src="assets/editblue.svg" alt="">რედაქტირება</button>
+            </div>
+
+            <div class="delete-button" *ngIf="!isDeleteMode && !isEditMode">
+                <button (click)="toggleDeleteMode()"><img src="assets/deleteV.svg" alt="">წაშლა</button>
+            </div>
+        
+            <div class="button-toggle">
+                <div class="edit-button__cancel" *ngIf="isEditMode">
+                    <button *ngIf="isEditMode" class="saveButton" (click)="saveChanges()">შეინახე</button>
+                    <button *ngIf="isEditMode" class="cancelButton" (click)="toggleEditMode()">გაუქმება</button>
+                </div>
+               
+                <div class="delete-button__cancel"  *ngIf="isDeleteMode">
+                    <button *ngIf="isDeleteMode" (click)="toggleDeleteMode()">
+                        გაუქმება sdas 
+                      </button>
+                </div>
+            </div>
+
       </div>
+
 
 </div>
 

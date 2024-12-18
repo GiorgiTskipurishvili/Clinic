@@ -1,1 +1,145 @@
-<p>administrator-calendar works!</p>
+<div class="calendar-container">
+    <div class="calendar-container__inner">
+      <div class="header-callendar">
+        <h4 style="color: #053354;">{{ currentYear }}</h4>
+        <div class="month">
+          <button (click)="changeMonth(-1)"><img src="/assets/vectorL.svg" alt="Previous Month"></button>
+          <h4>{{ monthNames[currentMonth] }}</h4>
+          <button (click)="changeMonth(1)"><img src="/assets/vectorR.svg" alt="Next Month"></button>
+        </div>
+      </div>
+  
+      <div class="calendar-scheme">
+        <table> 
+          <thead>
+            <tr>
+              <th>
+                <button (click)="previousWeek()" class="nav-button">
+                  <img src="/assets/vectorL.svg" alt="Previous Week">
+                </button>
+                <button (click)="nextWeek()" class="nav-button">
+                  <img src="/assets/vectorR.svg" alt="Next Week">
+                </button>
+              </th>
+              <th *ngFor="let dayObj of getCurrentWeekDays()">
+                <span class="day">{{ dayObj.date.getDate() }} </span> 
+                <span class="nameOfWeeks"> ({{ dayObj.name }})</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hour of hours">
+              <td class="time-slot">{{ hour }}</td>
+              <td *ngFor="let dayInfo of getCurrentWeekDays()"
+              [ngStyle]="{'background-color': getBackgroundColor(dayInfo.name, hour, dayInfo.date)}" style="border-radius: 5px;">
+
+
+                <div  class="delete-booking"  *ngIf="isDeleteMode && isWeekday(dayInfo.name) && getBookingText(dayInfo.name, hour, dayInfo.date) === 'დაჯავშნილია'">
+                  <img class="close-icon" src="/assets/x.svg" alt="" (click)="deleteBooking(dayInfo, hour)">
+                </div>
+
+
+
+                <div class="edit-booking" *ngIf="isEditMode && isWeekday(dayInfo.name) && getBookingText(dayInfo.name, hour, dayInfo.date) === 'დაჯავშნილია'">
+                  <img class="edit-icon" src="/assets/editblue.svg"(click)="toggleDescriptionTextForUpdate(dayInfo.name, hour, dayInfo.date)">
+                </div>
+
+
+
+                <div>
+                  <div *ngIf="getBookingText(dayInfo.name, hour, dayInfo.date) === 'დაჯავშნილია'">
+                      <span style="color: #3ACF99;">დაჯავშნილია</span>
+                    </div>
+                </div>
+
+                
+
+              </td>
+            </tr>
+
+
+          </tbody>
+          
+          
+        </table>
+      </div>
+
+      
+
+
+
+<!--  -->
+
+<!-- 
+    <div class="buttons">
+        <div class="edit-container" *ngIf="!isEditMode && !isDeleteMode">
+            <button *ngIf="!isEditMode" (click)="toggleEditMode()"><img src="assets/editblue.svg" alt="">რედაქტირება</button>
+        </div>
+
+        <div class="delete-button"  *ngIf="!isEditMode">
+            <button  *ngIf="!isDeleteMode" (click)="toggleDeleteMode()"><img src="assets/deleteV.svg" alt="">წაშლა</button>
+        </div>
+
+
+        <div class="button-toggle">
+          <div>
+                <div class="edit-button__cancel" *ngIf="isEditMode">
+                    <button *ngIf="isEditMode" (click)="cancelEditMode()">გაუქმება</button>
+                </div> 
+            </div>
+
+
+
+          <div class="delete-button__cancel" *ngIf="isDeleteMode">
+            <button *ngIf="isDeleteMode" (click)="cancelDeleteMode()">
+              გაუქმება
+            </button>
+          </div> 
+
+
+        </div> 
+    
+    </div> -->
+
+
+
+
+
+
+  <div class="showDescriptionText" *ngIf="isShowDescriptionTextForUpdate">
+    <div 
+      (click)="isShowDescriptionTextForUpdate = false" 
+      style="display: flex; justify-content: flex-end; color: red; cursor: pointer;">
+      X
+    </div>
+    
+    <div class="showDescriptionText__header">
+      <h3>გსურთ თქვენი აღწერილი მიზეზის შეცვლა?</h3>
+      <h3 style="color: #053354;">თქვენი აღწერილი პრობლემა შეგიძლიათ შეცვალოთ.</h3>
+    </div>
+  
+    <div class="openTextDescription__text">
+      <textarea [(ngModel)]="newDescription"></textarea>
+      
+    </div>
+  
+    <div class="btn-showDescriptionText">
+      <button *ngIf="newDescription !== selectedBooking?.description" (click)="updateDescription()">OK</button>
+    </div>
+    
+  </div>
+
+
+
+
+</div>
+  
+
+
+
+
+
+
+
+
+  

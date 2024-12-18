@@ -1,4 +1,4 @@
-<div class="administrator-container" style="height: 850px">
+<div class="administrator-container">
     <div class="administration-container__inner">
         
         <div class="administrator-container__header">
@@ -9,14 +9,13 @@
         <div class="administrator-container__body" *ngIf="doctorId;">
             <div class="card-edit__container">
                  <!-- <app-card-edit [doctor]="doctor"></app-card-edit>  -->
-                 <app-card-edit [doctor]="doctor" (saveDoctor)="saveDoctor($event)"></app-card-edit>
+                 <app-card-edit [doctor]="doctor" (saveDoctor)="saveDoctor($event)" [isEditMode]="isEditMode" [isDeleteMode]="isDeleteMode" (toggleEdit)="toggleEdit()" (toggleDelete)="toggleDelete()"></app-card-edit>
 
             </div>
 
             <div class="calendar__container">
-              <span>from administrator component</span>
               <div class="doctor-calendar__container">
-                
+                <app-administrator-calendar [isEditMode]="isEditMode" [isDeleteMode]="isDeleteMode"></app-administrator-calendar>
               </div>
             </div>
 

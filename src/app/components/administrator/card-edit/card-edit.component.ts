@@ -9,17 +9,37 @@ import { Doctor } from '../../../models/doctor.model';
 export class CardEditComponent {
   @Input() doctor: any = {};
   stars: number[] =[];
-
+  @Input() isEditMode: boolean = false;
+  @Input() isDeleteMode: boolean = false;
 
   @Output() saveDoctor = new EventEmitter<Doctor>();
+  @Output() toggleEdit = new EventEmitter<void>();  // Define the Output EventEmitter
+  @Output() toggleDelete = new EventEmitter<void>();
 
-  editMode: boolean = false;
+  
+
+
+  toggleEditMode() {
+    this.toggleEdit.emit();  // Emit the event to the parent to call the toggleEdit method
+  }
+
+  toggleDeleteMode(){
+    this.toggleDelete.emit();
+  }
+
+  // isEditMode: boolean = false;
+  // isDeleteMode: boolean=false;
   passwordChangeMode: boolean = false;
   newPassword: string = ''; 
 
-  toggleEditMode() {
-    this.editMode = !this.editMode;
-  }
+  // toggleEditMode() {
+  //   this.isEditMode = !this.isEditMode;
+  // }
+
+
+  // toggleDeleteMode(): void {
+  //   this.isDeleteMode = !this.isDeleteMode; 
+  // }
 
   togglePasswordChange() {
     this.passwordChangeMode = !this.passwordChangeMode;
@@ -30,14 +50,17 @@ export class CardEditComponent {
       this.doctor.password = this.newPassword; 
     }
     this.saveDoctor.emit(this.doctor); 
-    this.editMode = false;
+    this.isEditMode = false;
     this.passwordChangeMode = false;
   }
 
   cancelEdit() {
-    this.editMode = false;
+    this.isEditMode = false;
     this.passwordChangeMode = false;
     this.newPassword = '';
+  }
+  cancelDeleteMode(){
+    this.isDeleteMode = false
   }
   
 

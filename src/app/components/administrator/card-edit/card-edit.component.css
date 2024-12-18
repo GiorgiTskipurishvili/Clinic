@@ -196,13 +196,23 @@ a{
     justify-content: center; 
 }
 
-.saveButton:hover{
+.saveButton{
     background-color: #3ACF99;
     color: #FFFFFF;
 }
 
-.cancelButton:hover{
+.cancelButton{
     background-color: #FF93A6;
+    color: #FFFFFF;
+}
+
+.saveButton:hover{
+    background-color: #3acf998c;
+    color: #FFFFFF;
+}
+
+.cancelButton:hover{
+    background-color: #ff93a696;
     color: #FFFFFF;
 }
 
@@ -244,4 +254,81 @@ a{
     padding: 5px;
     border: 1px solid #0533540D;
     border-radius: 5px;
+}
+
+
+
+.add-button button{
+    background-color: #3ACF99;
+    width: 170px;
+    height: 50px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.edit-button button{
+    width: 230px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ECF2F8;
+    cursor: pointer;
+    color: #18A4E1;
+    border: none;
+    margin-right: 30px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.delete-button button{
+    width: 170px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF93A6;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+
+.button-toggle{
+    display: flex;
+}
+
+.edit-button__cancel{
+    display: flex;
+}
+
+.delete-button__cancel button{
+    width: 170px;
+    height: 50px;
+
+
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FF93A6;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.delete-button__cancel button:hover{
+    background-color: #ff93a696;
+    color: #FFFFFF;
 }

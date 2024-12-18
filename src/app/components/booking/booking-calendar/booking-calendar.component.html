@@ -112,43 +112,42 @@
             </button>
       </div>
     </div>
-
-
-
-
-
-
-  <!-- es maqvs mosawesrigebelii *ngIf="isOpenTextMode"-->
-  <div class="openTextDescription" *ngIf="isOpenTextMode">
-    <div (click)="closeOpenText()" style="display: flex; justify-content: flex-end; color: red;cursor: pointer;">
-      X
     </div>
 
-    <div>
-      
-      <div class="openTextDescription__header">
-        <h3 style="color: #3ACF99;">გსურთ ვიზიტის დაჯავშნა? </h3>
-        <h3 style="color: #053354;">შეგიძლიათ მიუთუთოთ თქვენი პორბლემა</h3>
+
+
+
+    <!-- es maqvs mosawesrigebelii *ngIf="isOpenTextMode"-->
+    <div class="openTextDescription" *ngIf="isOpenTextMode">
+      <div (click)="closeOpenText()" style="display: flex; justify-content: flex-end; color: red;cursor: pointer;">
+        X
       </div>
 
-      <div class="openTextDescription__text" [formGroup]="bookingForm">
-        <textarea name="textarea" formControlName="description">
+      <div>
+        
+        <div class="openTextDescription__header">
+          <h3 style="color: #3ACF99;">გსურთ ვიზიტის დაჯავშნა? </h3>
+          <h3 style="color: #053354;">შეგიძლიათ მიუთუთოთ თქვენი პორბლემა</h3>
+        </div>
 
-        </textarea>                
+        <div class="openTextDescription__text" [formGroup]="bookingForm">
+          <textarea name="textarea" formControlName="description">
+
+          </textarea>                
+
+        </div>
+        
+        <!-- <button class="btn" style="    background-color: #3ACF99;">გაუქმება</button> -->
+        <div class="button-container">
+            <button (click)="addNewBooking()">დაჯავშნა</button>  
+        </div>
 
       </div>
-      
-      <!-- <button class="btn" style="    background-color: #3ACF99;">გაუქმება</button> -->
-      <div class="button-container">
-          <button (click)="addNewBooking()">დაჯავშნა</button>  
-      </div>
-
     </div>
-  </div>
 
 
 
-<div>
+
   <div class="showDescriptionText" *ngIf="isShowDescriptionTextForUpdate">
     <div 
       (click)="isShowDescriptionTextForUpdate = false" 
@@ -171,6 +170,8 @@
     </div>
     
   </div>
+
+
 </div>
   
 
@@ -178,9 +179,6 @@
     <h3 style="color: red;">დასაჯავშნად გთხოვთ გაიაროთ</h3>
     <h3>ავტორიზაცია ან რეგისტრაცია.</h3>
   </div> -->
-
-    
-</div>
 
 
 
