@@ -5,34 +5,77 @@
       <div class="first">
         <div class="registration-container__input">
           <label for="firstName" >სახელი</label>
-          <input id="firstName" formControlName="firstName" type="text" />
+          <input id="firstName" formControlName="firstName" type="text" placeholder="( მინიმუმ 2 სიმბოლო )"/>
+
+          <div class="error-field" *ngIf="registrationForm.controls['firstName'].touched">
+            <small *ngIf="registrationForm.controls['firstName'].hasError('required')">სახელის ჩაწერა სავალდებულოა</small>
+            <small *ngIf="registrationForm.controls['firstName'].hasError('minlength')">სახელის სიგრძე უნდა იყოს მინიმუმ 2</small>
+            <small *ngIf="registrationForm.controls['firstName'].hasError('maxlength')">სახელის სიგრძე უნდა იყოს მაქსიმუმ 10</small>
+          </div>
+
         </div>
 
         <div class="registration-container__input">
           <label for="email" >Email</label>
           <input id="email" formControlName="email" type="email" />
+
+          <div class="error-field" *ngIf="registrationForm.controls['email'].touched">
+            <small *ngIf="registrationForm.controls['email'].hasError('required')">მეილის ჩაწერა სავალდებულოა</small>
+            <small *ngIf="registrationForm.controls['email'].hasError('email')">გთხოვთ შეიყვანეთ ვალიდური ელ-ფოსტა (მაგ: &#64;clinic.com)</small>
+          </div>
         </div>
 
         <div class="registration-container__input">
           <label for="personalId" >პირადი ნომერი</label>
-          <input id="personalId" formControlName="personalId" type="text" />
+          <input id="personalId" placeholder="00000000000" formControlName="personalId" type="text" />
+          <div class="error-field" *ngIf="registrationForm.controls['personalId'].touched">
+            <small *ngIf="registrationForm.controls['personalId'].hasError('required')">პრიადი ნომრის ჩაწერა სავალდებულოა</small>
+            <small *ngIf="registrationForm.controls['personalId'].hasError('pattern')">პირადი ნომერი უნდა შედგებოდი 11 ციფრისგან</small>
+          </div>
         </div>
       </div>
 
       <div class="second">
         <div class="registration-container__input">
           <label for="lastName" >გვარი</label>
-          <input id="lastName" formControlName="lastName" type="text" />
+          <input id="lastName" formControlName="lastName" type="text" placeholder="( მინიმუმ 3 სიმბოლო )"/>
+          
+          <!-- registrationForm.controls['lastName'].invalid -->
+          <div class="error-field" *ngIf="registrationForm.controls['lastName'].touched">
+            <small *ngIf="registrationForm.controls['lastName'].hasError('required')">გვარის ჩაწერა სავალდებულოა</small>
+            <small *ngIf="registrationForm.controls['lastName'].hasError('minlength')">გვარის სიგრძე უნდა იყოს მინიმუმ 3</small>
+            <small *ngIf="registrationForm.controls['lastName'].hasError('maxlength')">გვარის სიგრძე უნდა იყოს მაქსიმუმ 20</small>
+          </div>
         </div>
 
         <div class="registration-container__input">
           <label for="password" >პაროლი</label>
-          <input id="password" formControlName="password" type="password" />
+          <input id="password" placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )" formControlName="password" type="password" />
+          <div class="error-field" *ngIf="registrationForm.controls['password'].touched">
+            <small *ngIf="registrationForm.controls['password'].hasError('required')">პაროლის ჩაწერა სავალდებულოა</small>
+            <small *ngIf="registrationForm.controls['password'].hasError('minlength')">პაროლის სიგრძე უნდა იყოს მინიმუმ 8</small>
+
+          </div>
         </div>
 
         <div class="registration-container__input">
           <label for="category" >კატეგორია</label>
-          <input id="category" formControlName="category" type="text" />
+          <!-- <input id="category" placeholder="ანესთეზიოლოგი / თერაპევტი ან სხვა..." formControlName="category" type="text" />
+            -->
+
+            <div class="choice-category ">
+              <select formControlName="category" >
+>
+                <option value="">აირჩიეთ სპეციალობა</option>
+                <option *ngFor="let specialty of categories" [value]="specialty.name">
+                    {{specialty.name}}
+                </option>
+              </select>
+            </div>
+
+          <div class="error-field" *ngIf="registrationForm.controls['category'].invalid && registrationForm.controls['category'].touched">
+            <small>კატეგორიის არჩევა სავალდებულოა</small>
+          </div>
         </div>
       </div>
 
@@ -78,11 +121,14 @@
               hidden
             />
           </div>
+          <div class="error-field" *ngIf="registrationForm.controls['photo'].errors?.['invalidFileType'] && registrationForm.controls['photo'].touched">
+            <small>ფოტოს ატვირთვის ფორმატი უნდა იყოს .png ან .jpg</small>
+        </div>
         </div>
         
         <div class="registration-container__input">
           <label for="cv">CV</label>
-          <div class="input-with-image">
+          <div class="input-with-cv">
             <input
               type="text"
               id="cv"
@@ -100,7 +146,13 @@
               (change)="onFileChange($event, 'cv')"
               hidden
             />
+            
           </div>
+
+          <div class="error-field" *ngIf="registrationForm.controls['cv'].errors?.['invalidFileType'] && registrationForm.controls['cv'].touched">
+            <small>CV ატვირთვის ფორმატი უნდა იყოს .pdf</small>
+          </div>
+
         </div>
         
 
