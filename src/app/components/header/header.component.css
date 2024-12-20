@@ -1,11 +1,11 @@
 .header-container {
     gap: 0px;
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 150px;
-    padding-right: 150px;
+    /* padding-left: 150px;
+    padding-right: 150px; */
+    padding: 17px 150px 27px 150px;
 }
 
 .company-logo {
@@ -129,9 +129,6 @@ div .auth-reg{
     width: 30px;
     height: 28px;
     cursor: pointer;
-}
-.change-language {
-    margin-left: 20px;
 }
 
 .drop-down {

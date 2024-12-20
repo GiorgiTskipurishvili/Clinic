@@ -5,8 +5,14 @@
         <h1>ავტორიზაცია</h1>
         <input type="text" placeholder="ელ.ფოსტა/ტელეფონის ნომერი" [(ngModel)]="loginData.email">
         <input type="password" placeholder="პაროლი" [(ngModel)]="loginData.password">
-        <span>პაროლის აღდგენა</span>
+        <span class="recovery-password">პაროლის აღდგენა</span>
         <button (click)="login()">შესვლა</button>
         <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+    </div>
+
+    <div class="recovery-password__container">
+        <h1>პაროლის აღდგენა</h1>
+        <input type="text" placeholder="ელ.ფოსტა/ტელეფონის ნომერი" [(ngModel)]="loginData.email">
+        <p>უკან დაბრუნება</p>
     </div>
 </div>

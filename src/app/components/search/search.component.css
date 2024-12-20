@@ -1,13 +1,13 @@
 .search-container{
-    width: 100%;
-    height: 120px;
-    background-color:#ECF2F8;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    
+  width: 100%;
+  height: 120px;
+  background-color:#ECF2F8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 35px 150px;
 }
 
 .info{
@@ -15,9 +15,10 @@
     justify-content: space-between;
     flex-direction: row;
     text-align: center;
-    margin-left: 150px;
+    gap: 40px;
+    /* margin-left: 150px;
     margin-right: 150px;
-    /* margin-bottom: 35px; */
+    margin-bottom: 35px; */
 }
 
 
@@ -67,8 +68,6 @@ input::placeholder {
     height: 40px;
     background-color: #FFFFFF;
     border-radius: 50%;
-
-    margin-left: 20px;
 }
 
 .search__container{
@@ -77,16 +76,17 @@ input::placeholder {
 
 
     /* margin: 35px; */
-    margin-left: 40px;
+    /* margin-left: 40px; */
     justify-content: center;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
-.search__doctor-name{
+/* .search__doctor-name{
     margin-right: 20px;
     margin-left: 97px;
-}
+} */
 
 
 .search__doctor-name input{
@@ -126,7 +126,6 @@ input::placeholder {
     border-radius: 50%;
     background-color: #053354;
     border: none;
-    margin: 20px;
     justify-content: center;
 }
 

@@ -30,7 +30,7 @@
           <input id="personalId" placeholder="00000000000" formControlName="personalId" type="text" />
           <div class="error-field" *ngIf="registrationForm.controls['personalId'].touched">
             <small *ngIf="registrationForm.controls['personalId'].hasError('required')">პრიადი ნომრის ჩაწერა სავალდებულოა</small>
-            <small *ngIf="registrationForm.controls['personalId'].hasError('pattern')">პირადი ნომერი უნდა შედგებოდი 11 ციფრისგან</small>
+            <small *ngIf="registrationForm.controls['personalId'].hasError('pattern')">პირადი ნომერი უნდა შედგებოდეს 11 ციფრისგან</small>
           </div>
         </div>
       </div>
@@ -121,9 +121,9 @@
               hidden
             />
           </div>
-          <div class="error-field" *ngIf="registrationForm.controls['photo'].errors?.['invalidFileType'] && registrationForm.controls['photo'].touched">
-            <small>ფოტოს ატვირთვის ფორმატი უნდა იყოს .png ან .jpg</small>
-        </div>
+            <div class="error-field" *ngIf="registrationForm.controls['photo'].errors?.['invalidFileType'] && registrationForm.controls['photo'].touched">
+              <small>ფოტოს ატვირთვის ფორმატი უნდა იყოს .png ან .jpg</small>
+            </div>
         </div>
         
         <div class="registration-container__input">
@@ -152,12 +152,11 @@
           <div class="error-field" *ngIf="registrationForm.controls['cv'].errors?.['invalidFileType'] && registrationForm.controls['cv'].touched">
             <small>CV ატვირთვის ფორმატი უნდა იყოს .pdf</small>
           </div>
-
         </div>
         
 
 
-        <button type="submit" [disabled]="registrationForm.invalid">რეგისტრაცია</button>
+        <button type="submit" [disabled]="!registrationForm.invalid">რეგისტრაცია</button>
       </div>
     </form>
 

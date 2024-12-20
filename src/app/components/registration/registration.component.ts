@@ -92,38 +92,20 @@ export class RegistrationComponent {
   }
 
   
-  // submit() {
-  //   if (this.registrationForm.valid) {
-  //     const formData = new FormData();
-  
 
-  //     Object.keys(this.registrationForm.controls).forEach((key) => {
-  //       formData.append(key, this.registrationForm.get(key)?.value);
-  //     });
-  
-
-  //     formData.append('role', '1');
-  
-
-  //     this.doctorService.addDoctor(formData).subscribe({
-  //       next: () => {
-  //         this.message = 'თქვენ წარმატებით დარეგისტირდით';
-  //         setTimeout(() => this.router.navigate(['']), 2000);
-  //       },
-  //       error: (err) => {
-  //         console.error('რეგისტრაცია ვერ მოხერხდა.', err);
-
-  //         if (err.error instanceof ErrorEvent) {
-  //           this.message = err.error.message;
-  //         } else {
-  //           this.message = err.error?.message || err.error || err.statusText || 'რეგისტრაცია ვერ მოხერხდა. სცადეთ ისევ...';
-  //         }
-  //       },
-  //     });
-  //   }
-  // }
-  
   submit() {
+    if (this.registrationForm.invalid) {
+      alert('თქვენ არ შეგივსიათ ყველა ველი');
+      Object.keys(this.registrationForm.controls).forEach(controlName => {
+        const control = this.registrationForm.get(controlName);
+        if (control) {
+          control.markAsTouched();  
+        }
+      });
+      return;
+    }
+
+
     if (this.registrationForm.valid) {
       const formData = new FormData();
       Object.keys(this.registrationForm.controls).forEach((key) => {
@@ -134,7 +116,7 @@ export class RegistrationComponent {
       this.doctorService.addDoctor(formData).subscribe({
         next: () => {
           alert('თქვენ წარმატებით დარეგისტირდით');
-          this.router.navigate(['']); // or any other redirection logic
+          this.router.navigate(['']); 
         },
         error: (err) => {
           console.error('Error:', err);

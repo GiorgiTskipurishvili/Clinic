@@ -28,4 +28,19 @@ export class CategoryPageComponent implements OnInit{
       }
     );
   }
+
+  // deleteDoctor(id: number): void {
+
+  //     this.doctorService.deleteDoctor(id).subscribe({
+  //       next: () => {
+  //         alert('ექიმი წარმატებით წაიშალა.');
+  //         this.getDoctors();
+  //       },
+  //       error: (err) => {
+  //         console.error('ექიმის წაშლა ვერ მოხერხდა:', err);
+  //         alert('ექიმის წაშლა ვერ მოხერხდა. სცადეთ ხელახლა.');
+  //       },
+  //     });
+  //   }
+  
 }

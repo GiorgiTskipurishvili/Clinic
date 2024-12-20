@@ -103,3 +103,7 @@ button:hover{
     z-index: 11;
     background-color: white;
  }
+
+ .recovery-password{
+    cursor: pointer;
+ }

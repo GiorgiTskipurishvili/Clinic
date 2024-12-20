@@ -33,6 +33,12 @@
         (input)="filterDoctors()"
       />
     </div>
+
+    <div class="search-button">
+      <button>
+          <img src="assets/search.png" alt="">
+      </button>
+    </div>
   </div>
 
   <div *ngIf="isListVisible && filteredDoctors.length > 0" class="doctor-list-container">
@@ -64,11 +70,7 @@
   </div>
 
 
-  <div class="search-button">
-    <button>
-        <img src="assets/search.png" alt="">
-    </button>
-</div>
+
 
 </div>
 

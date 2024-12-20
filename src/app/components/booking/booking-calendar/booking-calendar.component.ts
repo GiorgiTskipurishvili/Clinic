@@ -360,12 +360,12 @@ export class BookingCalendarComponent {
           this.closeOpenText(); 
         },
         (error) => {
-          console.error('Error adding booking:', error);
-          alert('Error adding booking. Please try again.');
+          // console.error('Error adding booking:', error);
+          alert('დასაჯავშნად უნდა შეხვიდე სისტემაში.');
         }
       );
     } else {
-      alert('Please fill in the required fields.');
+      alert('გთხოვთ შეავსოთ მოცემული ველი დასაჯავშნად');
     }
   }
   
